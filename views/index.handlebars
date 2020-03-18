@@ -1,3 +1,14 @@
+<div>
+        {{#if isloggedin}}
+            <a href="/logout"> <button type="btn" class="btn">Logout</button></a>
+        {{else}}
+            <button type="submit" id="sign-in-modal" class="btn">Sign In!</button>
+            <button type="submit" id="sign-up" class="btn">Sign Up!</button>
+        {{/if}}
+        
+</div>
+
+
 <div id="home">
   <div class="container">
     <div class="row">
@@ -29,5 +40,35 @@
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<div class="modal" id="account-info" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Credentials</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="inputAccount">Email</label>
+                        <input type="text" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAccount">Password (min 8 characters)</label>
+                        <input type="password" class="form-control" id="account_password">
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button id="sign-in" type="button" class="btn btn-primary">Login</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
