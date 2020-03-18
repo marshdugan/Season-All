@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TEST</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                const queryURL = "https://www.hikingproject.com/data/get-trails?lat=" + pos.lat + "&lon=" + pos.lng + "&maxDistance=10&key=200706624-a0ce2059fccca3e98797fa8cdd9232f4"
+                $.ajax({
+                    url: queryURL,
+                    method: "GET",
+                }).then(function (response) {
+                    console.log(response);
+                });
+            });
+        }
+        const plantURL = "https://cors-anywhere.herokuapp.com/https://trefle.io/api/species/?token=cENnQVVGbndtK0EvT0pMK1paMmN4dz09";
+        $.ajax({
+            url: plantURL,
+            method: "GET",
+        }).then(function (response) {
+            console.log(response);
+        });
+
+    </script>
+</body>
+
+</html>
