@@ -16,8 +16,8 @@ module.exports = function (app) {
             db.Accounts.findOne({
                 where: {
                     uuid: req.session.passport.user
-                }
-                //include: [db.Trail]
+                },
+                include: [db.Trail]
             }).then(function (dbUser) {
                 var user = {
                     userInfo: dbUser.dataValues,
