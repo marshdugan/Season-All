@@ -65,7 +65,6 @@ function(req, email, account_key, done) {
             email: req.body.email 
         }
     }).then(function(user, err) {
-        //(!user.validPassword(req.body.account_key)));
         if (!user){
             console.log("no user found");
             return done(null, false, req.flash('loginMessage', 'No user found.')); 

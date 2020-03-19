@@ -12,13 +12,6 @@ module.exports = function(app) {
     } else {
       res.render("index");
     }
-
-    // db.Example.findAll({}).then(function(dbExamples) {
-    //   res.render("index", {
-    //     msg: "Welcome!",
-    //     examples: dbExamples
-    //   });
-    // });
   });
 
   app.get("/list-items", function(req,res){

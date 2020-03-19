@@ -10,6 +10,8 @@ module.exports = function(app) {
 
   // Create a new example
   app.post("/api/trail", function(req, res) {
+    console.log("========REQ BODY Trail.create========");
+    console.log(req.body);
     db.Trail.create(req.body).then(function(data) {
       res.json(data);
     });
