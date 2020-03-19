@@ -10,10 +10,22 @@ if (navigator.geolocation) {
             method: "GET",
         }).then(function (response) {
             console.log(response);
+            const trailObj = [];
+            for (let i = 0; i < response.trails.length; i++) {
+                trailObj.push({
+                    trailId: parseInt(response.trails[i].id),
+                    name: response.trails[i].name,
+                    type: response.trails[i].type,
+                    summary: response.trails[i].summary,
+                    difficulty: response.trails[i].difficulty,
+                    stars: parseInt(response.trails[i].stars)
+                });
+            }
+            console.log(trailObj);
             $.ajax({
-                method: "POST",
+                type: "POST",
                 url: "/api/trail",
-                data: response
+                data: {trail: trailObj}
             }).then(function () {
                 window.location.href = "/trails";
             });
