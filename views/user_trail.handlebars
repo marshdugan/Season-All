@@ -1,0 +1,11 @@
+<h1>TRAILS</h1>
+
+<ul class="list-group">
+{{#each trail}}
+    <li class="list-group item">
+        {{this.dataValues.name}}
+        {{this.dataValues.summary}}
+        {{this.dataValues.stars}}
+    </li>
+{{/each}}
+</ul>

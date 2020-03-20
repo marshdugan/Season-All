@@ -5,7 +5,8 @@ module.exports = function (app) {
   // Get all examples
   app.get("/trails", function (req, res) {
     db.Trail.findAll({}).then(function (data) {
-      res.json(data);
+      console.log(data);
+      res.render("user_trail", {trail: data});
     });
   });
 
@@ -17,7 +18,6 @@ module.exports = function (app) {
       truncate: true
     });
     console.log("========REQ BODY Trail.create========");
-    console.log(req.body.trail);
     for (let i = 0; i < req.body.trail.length; i++) {
       db.Trail.create({
         trailId: req.body.trail[i].trailId,
