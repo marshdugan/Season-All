@@ -105,3 +105,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Walt's environment
+*.code-workspace
+.DS_Store
+.cmproj
+*.pxm
+*.mp4
+*.mov
