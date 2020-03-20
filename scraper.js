@@ -1,10 +1,5 @@
-// can I change request with axios and the syntax stays the same?
 // how can I async await the results so they're in order?
 // how do we know that the requests are complete? Therefore I can organize the array in alphabetical order. A nested async await seems like the answer, but I don't know how to do that
-
-// 1. make this request("http://nhlr.org/lookouts/us",
-//     -.ech to grab all URLSearchParams, and store each URL in an Array
-// 2. Call a seconf function  that for loops through the array of URL for each iteration you will mkae the second request call, and then you can store each HTML obj in anarray
 
 /*
 setTimeout(() => {
@@ -15,9 +10,15 @@ setTimeout(() => {
 
 let cheerio = require("cheerio");
 let request = require("request");
+let fs = require("fs");
 
 let queryURL1 = "http://nhlr.org/lookouts/us"
-let emptyArray = [];
+
+fs.writeFile("index.json", "", function(error) {
+    if (error) throw error
+});
+
+// let emptyArray = [];
 // let ObjectsToCsv = require('objects-to-csv');
 
 // make ajax call to main 200 link URL
@@ -34,9 +35,8 @@ request("http://nhlr.org/lookouts/us", (error, response, html) => {
                 
                     request(`http://nhlr.org${queryURL2}`, (error, response, html) => {
                         if (!error && response.statusCode == 200) {
-                            let $ = cheerio.load(html);
                             
-                            // use trim for whitespace
+                            let $ = cheerio.load(html);
                             let location = $(".tablewhitegridnoheader tr:contains('Location') td:nth-of-type(2)").text().trim();
                             let coordinates = $(".tablewhitegridnoheader tr:contains('Coordinates') td:nth-of-type(2)").text().trim().split(" ").join("");
                             let elevation = $(".tablewhitegridnoheader tr:contains('Elevation') td:nth-of-type(2)").text().trim();
@@ -45,11 +45,16 @@ request("http://nhlr.org/lookouts/us", (error, response, html) => {
                             let htmlObject = {location, coordinates, elevation, built};
 
                             // emptyArray.push(htmlObject);
+                            
+                            fs.appendFile("index.json", JSON.stringify(htmlObject), function(error) {
+                                if (error) throw error
+                            });
+
                             // console.log(location);
                             // console.log(coordinates);
                             // console.log(elevation);
                             // console.log(built);
-                            // console.log(htmlObject)
+                            console.log(htmlObject)
                         };
                     });
                     // console.log(emptyArray)
