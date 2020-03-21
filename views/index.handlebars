@@ -1,74 +1,19 @@
-<div>
-  {{#if isloggedin}}
-  <a href="/logout"> <button type="btn" class="btn">Logout</button></a>
-  {{else}}
-  <button type="submit" id="sign-in-modal" class="btn">Sign In!</button>
-  <button type="submit" id="sign-up" class="btn">Sign Up!</button>
-  {{/if}}
-
-</div>
-
-
 <div id="home">
-  <div class="grid container">
-    <div class="grid-x grid-padding-x">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <div class="medium-6 cell" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
-              placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description"
-              placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="button">Submit</button>
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x align-center">
+        <h2>Sign In</h2>
+        <div class="medium-6 cell">
+          <form>
+            <input type="text" id="email" placeholder="Enter Email" style="border-radius: 5px">
           </form>
-          <h3>Examples:</h3>
-          <ul id="example-list" class="list-group">
-            {{#each examples}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              <a href="example/{{this.id}}">{{this.text}}</a>
-              <button class="btn btn-danger float-right delete">ｘ</button>
-            </li>
-            {{/each}}
-          </ul>
-        </div>
+
+          <form>
+            <input type="text" id="account_password" placeholder="Enter Password">
+          </form>
+
+          <button id="sign-in" class="button">Sign In!</button>
+          <button type="submit" id="sign-up" class="button">Sign Up!</button>
       </div>
     </div>
   </div>
-
-  {{!-- <div class="reveal" id="account-info" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Credentials</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="inputAccount">Email</label>
-              <input type="text" class="form-control" id="email">
-            </div>
-            <div class="form-group">
-              <label for="inputAccount">Password (min 8 characters)</label>
-              <input type="password" class="form-control" id="account_password">
-            </div>
-          </form>
-        </div>
-
-        <div class="modal-footer">
-          <button id="sign-in" type="button" class="button">Login</button>
-          <button type="button" class="button" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> --}}
+</div>

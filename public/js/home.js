@@ -5,10 +5,10 @@ $(document).ready(function() {
           window.location.href = "/signup"
         //});
       });
-      $("#sign-in-modal").on("click", function (event) {
-        event.preventDefault();
-        $("#account-info").modal("show");
-      });
+    //   $("#sign-in").on("click", function (event) {
+    //     event.preventDefault();
+    //     $("#account-info").modal("show");
+    //   });
       $("#go-home").on("click", function (event) {
         event.preventDefault();
         console.log("hello")

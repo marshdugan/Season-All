@@ -12,12 +12,11 @@ module.exports = function (app) {
 
   // Create a new example
   app.post("/api/trail", function (req, res) {
-    console.log(req.session.passport.user);
     db.Trail.destroy({
       where: {AccountUuid: req.session.passport.user},
       truncate: true
     });
-    console.log("========REQ BODY Trail.create========");
+    
     for (let i = 0; i < req.body.trail.length; i++) {
       db.Trail.create({
         trailId: req.body.trail[i].trailId,
