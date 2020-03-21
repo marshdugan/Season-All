@@ -26,19 +26,11 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/add-items", function(req, res){
-    if (req.isAuthenticated()){
-        res.render("add-items");
-    } else {
-        res.redirect("/")
-    }
-  });
-
   // Load example page and pass in an example by id
   app.get("/trail/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function(data) {
       res.render("example", {
-        example: dbExample
+        example: data
       });
     });
   });

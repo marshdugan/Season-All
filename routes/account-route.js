@@ -12,7 +12,6 @@ module.exports = function (app) {
         console.log("%%%%%%%%% is logged in", req.isAuthenticated());
 
         if (req.isAuthenticated()) {
-            console.log("IN IF STATEMENT");
             db.Accounts.findOne({
                 where: {
                     uuid: req.session.passport.user
