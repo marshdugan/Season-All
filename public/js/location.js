@@ -27,7 +27,7 @@ if (navigator.geolocation) {
                 url: "/api/trail",
                 data: {trail: trailObj}
             }).then(function () {
-                window.location.href = "/trails";
+                //window.location.href = "/trails";
             });
         });
     });

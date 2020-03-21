@@ -5,12 +5,14 @@ var passport = require('passport');
 module.exports = function (app) {
 
     app.get("/signup", function (req, res) {
-        res.render("accounts");
+        if (req.isAuthenticated()){
+            res.redirect("/acounts/view");
+        } else {
+            res.render("accounts"); 
+        }
     });
 
     app.get("/accounts/view", function (req, res) {
-        console.log("%%%%%%%%% is logged in", req.isAuthenticated());
-
         if (req.isAuthenticated()) {
             db.Accounts.findOne({
                 where: {
@@ -27,7 +29,6 @@ module.exports = function (app) {
             })
         }
         else {
-            console.log("THIS IS ELSE");
             var user = {
                 id: null,
                 isloggedin: req.isAuthenticated()
@@ -35,6 +36,7 @@ module.exports = function (app) {
             res.redirect("/");
         }
     });
+
     app.get('/logout', function (req, res) {
         req.session.destroy(function (err) {
             req.logout();
@@ -44,6 +46,7 @@ module.exports = function (app) {
             res.redirect('/');
         })
     });
+    
     app.post('/signup', function (req, res, next) {
         passport.authenticate('local-signup', function (err, user, info) {
             console.log("info", info);
@@ -70,13 +73,11 @@ module.exports = function (app) {
 
     app.post('/login', function (req, res, next) {
         passport.authenticate('local-login', function (err, user, info) {
-            console.log("\n\n\n########userrrr", user)
             if (err) {
                 console.log("passport err", err);
                 return next(err); // will generate a 500 error
             }
             if (!user) {
-
                 return res.send({ success: false, message: 'authentication failed' });
             }
             req.login(user, loginErr => {

@@ -5,18 +5,18 @@ module.exports = function (app) {
   // Get all examples
   app.get("/trails", function (req, res) {
     db.Trail.findAll({}).then(function (data) {
-      console.log(data);
       res.render("user_trail", {trail: data});
     });
   });
 
   // Create a new example
   app.post("/api/trail", function (req, res) {
+    console.log(req.session.passport.user);
     db.Trail.destroy({
       where: {AccountUuid: req.session.passport.user},
       truncate: true
     });
-    
+
     for (let i = 0; i < req.body.trail.length; i++) {
       db.Trail.create({
         trailId: req.body.trail[i].trailId,
