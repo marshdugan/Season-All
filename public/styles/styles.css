@@ -1,3 +1,7 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+#account_password { 
+  -webkit-text-security: disc; 
+}

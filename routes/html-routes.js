@@ -14,16 +14,18 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/list-items", function(req,res){
-    res.render("search");
-  });
-
-  app.get("/signup", function(req,res){
-    if (req.isAuthenticated()){
-        res.redirect("/acounts/view");
-    } else {
-      res.render("accounts"); 
-    }
+  // app.get("/signup", function(req,res){
+  //   if (req.isAuthenticated()){
+  //       res.redirect("/accounts/view");
+  //   } else {
+  //     res.render("accounts"); 
+  //   }
+  // });
+  
+  app.get("/trails", function (req, res) {
+    db.Trail.findAll({}).then(function (data) {
+      res.render("user_trail", {trail: data});
+    });
   });
 
   // Load example page and pass in an example by id

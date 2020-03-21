@@ -9,7 +9,19 @@
   </header>
 
 
-  <form id="account-form">
+  <ul class="list-group">
+  {{#each trail}}
+      <li class="list-group item">
+          {{this.dataValues.name}}
+          {{this.dataValues.summary}}
+          {{this.dataValues.stars}}
+      </li>
+  {{/each}}
+  </ul>
+
+
+
+  {{!-- <form id="account-form">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputFirst">First Name</label>
@@ -159,6 +171,6 @@
       </div>
     </div>
 
-  </div>
+  </div> --}}
 </div>
 <script src="/js/location.js"></script>
