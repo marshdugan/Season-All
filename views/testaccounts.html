@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css"
+        integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/styles/styles.css">
+    <script src="https://kit.fontawesome.com/17845346d6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2|Ubuntu&display=swap" rel="stylesheet">
+    <title>SeasonAll</title>
+
+<body>
+    <div class="container">
+        <header class= "head">
+            <h1>View or update your account</h1>
+            <div class="accountID">
+                <h3>Welcome, {{userInfo.first_name}}</h3>
+                <h5 id="account-number" data-accountemail="{{userInfo.email}}">Account email: {{userInfo.email}}</h5>
+            </div>
+            <h3 id="update-err-msg"></h3>
+        </header>
+    
+    
+        <form id="account-form">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x align-center">
+                    <div class="medium-4 cell">
+                        <label for="inputFirst">First Name</label>
+                        <input type="text" class="form-control" id="inputFirst" value="{{userInfo.first_name}}"
+                            placeholder="John" style="border-radius: 20px";                            >
+                    </div>
+                </div>
+    
+                <div class="grid-x grid-padding-x align-center">
+                    <div class="medium-4 cell">
+                        <label for="inputLast">Last Name</label>
+                        <input type="text" class="form-control" id="inputLast" value="{{userInfo.last_name}}"
+                            placeholder="Doe" style="border-radius: 20px">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x align-center">
+                    <div class="medium-4 cell">
+                        <label for="inputEmail">Email</label>
+                        <input type="text" class="form-control" id="inputEmail" value="{{userInfo.email}}"
+                            placeholder="test@test.com" style="border-radius: 20px">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x align-center">
+                    <div class="medium-4 cell">
+                        <label for="inputPhone">Phone</label>
+                        <input type="text" class="form-control" id="inputPhone" value="{{userInfo.phone}}"
+                            placeholder="4155551234" style="border-radius: 20px">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x align-center">
+                    <div class="medium-4 cell">
+                        <label for="inputStreet">Street</label>
+                        <input type="text" class="form-control" id="inputStreet" value="{{userInfo.street}}"
+                            placeholder="1234 Your St" style="border-radius: 20px">
+                    </div>
+                </div>
+    
+                <div class="grid-x grid-padding-x align-center">
+                    <div class="medium-4 cell">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity" value="{{userInfo.city}}"
+                            placeholder="Your City" style="border-radius: 20px">
+                    </div>
+                </div>
+    
+                <div class="grid-x grid-padding-x align-center">
+                    <div class="medium-4 cell"> <label for="inputState">State</label>
+                        <select id="inputState" class="form-control" value="{{userInfo.state}}" style="border-radius: 20px">
+                            <option value="{{userInfo.state}}">{{userInfo.state}}</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                </div>
+    
+    
+                <div class="grid-x grid-padding-x align-center">
+                    <div class="medium-4 cell">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip" value="{{userInfo.zip}}" placeholder="12345" style="border-radius: 20px">
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x align-center">
+                    <div class="medium-4 cell">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" value="{{userInfo.account_key}}" style="border-radius: 20px">
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+            <div class="grid-container">
+    
+                <button type="submit" id="add-account" class="button">ADD</button>
+                <button type="submit" id="delete-account" class="button">DELETE</button>
+                <button type="submit" id="view-account" class="button">REFRESH</button>
+    
+            </div>
+    
+    
+        </form>
+    
+    
+    
+    
+        <div class="row">
+            <div class="columns">
+                <p><button class="button" data-open="exampleModal1">Click me for a modal</button></p>
+    
+                <div class="reveal" id="exampleModal1" data-reveal>
+                    <h5>Re-Enter Credentials to delete account</h5>
+                    <form>
+                        <label for="inputAccount">Account#</label>
+                        <input type="text" class="form-control" id="account_id">
+    
+                        <label for="inputAccount">Password#</label>
+                        <input type="password" class="form-control" id="account_password">
+                    </form>
+                    <button id="confirm-delete" type="button" class="alert button">Confirm Delete</button>
+                    <button type="button" class="success button">Nah I'll stay</button>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    {{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script> --}}
+    <script src="/js/location.js"></script>
+</body>
+
+</html>
