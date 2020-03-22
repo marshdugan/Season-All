@@ -67,7 +67,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         account_key: {
             type: DataTypes.STRING,
-            required: true,
+            required: false,
             validate: {
                 len:[8]
             }
@@ -86,8 +86,6 @@ module.exports = function(sequelize, DataTypes) {
     };
 
     Accounts.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
         Accounts.hasMany(models.Trail, {
           onDelete: "cascade"
         });

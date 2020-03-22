@@ -3,6 +3,21 @@
 
 console.log("Accounts.js loaded");
 
+$("#add-new-user").on("click", function(event) {
+    event.preventDefault();
+    const newUser = {
+        email: $("#inputEmail").val().trim(),
+        account_key: $("#inputPassword").val().trim()
+    };
+    $.ajax({
+        type: "POST",
+        url: "/signup",
+        data: newUser
+    }).then(function(data) {
+        window.location.href = "/";
+    });
+})
+
 
 // ADD    ****************
 $("#add-account").on("click", function (event) {
@@ -20,7 +35,6 @@ $("#add-account").on("click", function (event) {
     email: $("#inputEmail").val().trim(),
     phone: $("#inputPhone").val().trim(),
     account_key: $("#inputPassword").val().trim()
-
   };
 
   if (newAccount.account_key.length > 0 && newAccount.phone.length > 0 && newAccount.email.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.street.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
@@ -55,7 +69,7 @@ $("#update-account").on("click", function (event) {
   };
   $("#err-msg").empty("");
   // $("#change-account-modal").modal("show");
-  console.log(changeAccount);
+  //console.log(changeAccount);
   
 
 
@@ -66,7 +80,7 @@ $("#update-account").on("click", function (event) {
       data: changeAccount
     }).then(
       function () {
-        console.log("Updated account", changeAccount);
+        //console.log("Updated account", changeAccount);
         // Reload the page to get the updated list
         location.reload();
       }
@@ -91,7 +105,7 @@ $("#confirm-delete").on("click", function (event) {
     account_id: $("#account_id").val().trim(),
     account_key: $("#account_password").val().trim(),
   }
-  console.log(deleteAccount);
+  //console.log(deleteAccount);
   if (deleteAccount.account_id.length > 0 && deleteAccount.account_key.length > 0) {
     $.ajax("/accounts/" + deleteAccount.account_id + "/" + deleteAccount.account_key, {
       type: "DELETE"
