@@ -51,10 +51,6 @@ module.exports = function(sequelize, DataTypes) {
                 len: [5]
             }
         },
-        balance: {
-            type: DataTypes.DECIMAL(12, 2),
-            defaultValue: 0
-        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,

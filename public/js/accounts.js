@@ -23,7 +23,7 @@ $("#add-account").on("click", function (event) {
 
   };
 
-  if (newAccount.account_key.length > 0 && newAccount.phone.length > 0 && newAccount.email.length > 0 && newAccount.balance.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.street.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
+  if (newAccount.account_key.length > 0 && newAccount.phone.length > 0 && newAccount.email.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.street.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
     $.ajax({
       type: "post",
       url: "/signup",
@@ -48,7 +48,6 @@ $("#update-account").on("click", function (event) {
     city: $("#inputCity").val().trim(),
     state: $("#inputState").val().trim(),
     zip: $("#inputZip").val().trim(),
-    balance: $("#inputBalance").val().trim(),
     email: $("#inputEmail").val().trim(),
     phone: $("#inputPhone").val().trim(),
     account_key: $("#inputPassword").val().trim(),
@@ -60,7 +59,7 @@ $("#update-account").on("click", function (event) {
   
 
 
-  if (changeAccount.account_id.length > 0 && changeAccount.account_key.length > 0 && changeAccount.phone.length > 0 && changeAccount.email.length > 0 && changeAccount.balance.length > 0 && changeAccount.zip.length > 0 && changeAccount.state.length > 0 && changeAccount.city.length > 0 && changeAccount.street.length > 0 && changeAccount.account_key.length > 0 && changeAccount.last_name.length > 0 && changeAccount.first_name.length > 0){
+  if (changeAccount.account_id.length > 0 && changeAccount.account_key.length > 0 && changeAccount.phone.length > 0 && changeAccount.email.length > 0 && changeAccount.zip.length > 0 && changeAccount.state.length > 0 && changeAccount.city.length > 0 && changeAccount.street.length > 0 && changeAccount.account_key.length > 0 && changeAccount.last_name.length > 0 && changeAccount.first_name.length > 0){
     $.ajax({
       type: "PUT",
       url: "/accounts/" + changeAccount.account_id + "/" + changeAccount.account_key,
@@ -84,7 +83,7 @@ $("#update-account").on("click", function (event) {
 $("#delete-account").on("click", function (event) {
   event.preventDefault();
   $("#err-msg").empty("");
-  $("#delete-account-modal").modal("show");
+  //$("#delete-account-modal").modal("show");
 });
 
 $("#confirm-delete").on("click", function (event) {
