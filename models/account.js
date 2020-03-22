@@ -11,51 +11,45 @@ module.exports = function(sequelize, DataTypes) {
         },
         first_name: {
             type: DataTypes.STRING,
-            allowNull: true,
-            defaultValue: "SeasonAll User",
+            allowNull: false,
             validate: {
                 len: [1, 30]
             }
         },
         last_name: {
             type: DataTypes.STRING,
-            allowNull: true,
-            defaultValue: "",
-            // validate: {
-            //     len: [1, 30]
-            // }
+            allowNull: false,
+            validate: {
+                len: [1, 30]
+            }
         },
         street: {
             type: DataTypes.STRING,
-            allowNull: true,
-            defaultValue: "",
-            // validate: {
-            //     len: [1, 30]
-            // }
+            allowNull: false,
+            validate: {
+                len: [1, 30]
+            }
         },
         city: {
             type: DataTypes.STRING,
-            allowNull: true,
-            defaultValue: "",
-            // validate: {
-            //     len: [1, 30]
-            // }
+            allowNull: false,
+            validate: {
+                len: [1, 30]
+            }
         },
         state: {
             type: DataTypes.STRING,
-            allowNull: true,
-            defaultValue: "",
-            // validate: {
-            //     len: [1, 2]
-            // }
+            allowNull: false,
+            validate: {
+                len: [1, 2]
+            }
         },
         zip: {
             type: DataTypes.INTEGER,
-            allowNull: true,
-            defaultValue: 0,
-            // validate: {
-            //     len: [5]
-            // }
+            allowNull: false,
+            validate: {
+                len: [5]
+            }
         },
         email: {
             type: DataTypes.STRING,
@@ -66,15 +60,14 @@ module.exports = function(sequelize, DataTypes) {
         },
         phone: {
             type: DataTypes.STRING,
-            allowNull: true,
-            defaultValue: "",
-            // validate: {
-            //     len: [10]
-            // }
+            allowNull: false,
+            validate: {
+                len: [10]
+            }
         },
         account_key: {
             type: DataTypes.STRING,
-            required: true,
+            required: false,
             validate: {
                 len:[8]
             }

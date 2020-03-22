@@ -36,14 +36,14 @@ module.exports = function(passport) {
                 return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
             } else {
                 db.Accounts.create({
-                    //first_name:req.body.first_name,
-                    //last_name:req.body.last_name,
-                    //street: req.body.street,
-                    //city: req.body.city,
-                    //state: req.body.state,
-                    //zip: req.body.zip,
+                    first_name:req.body.first_name,
+                    last_name:req.body.last_name,
+                    street: req.body.street,
+                    city: req.body.city,
+                    state: req.body.state,
+                    zip: req.body.zip,
                     email: req.body.email,
-                    //phone: req.body.phone,
+                    phone: req.body.phone,
                     account_key: db.Accounts.generateHash(account_key) 
 				}).then(function(dbUser) {		    	
 	                return done(null, dbUser);
