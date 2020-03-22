@@ -8,18 +8,19 @@
     <h3 id="update-err-msg"></h3>
   </header>
 
-
+  <div class="grid-x grid-padding-x align-center">
   <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
   {{#each trail}}
       <li class="accordion-item" data-accordion-item>
         <a href="#" class="accordion-title">{{this.dataValues.name}}</a>
         <div class="accordion-content" data-tab-content>
-          <p>{{this.dataValues.summary}}</p>
+          <p class="text-center">{{this.dataValues.summary}}</p>
           <p>{{this.dataValues.stars}}</p>
         </div>
       </li>
   {{/each}}
   </ul>
+  </div>
 
 
 

@@ -42,7 +42,6 @@ module.exports = function(passport) {
                     city: req.body.city,
                     state: req.body.state,
                     zip: req.body.zip,
-                    balance: req.body.balance,
                     email: req.body.email,
                     phone: req.body.phone,
                     account_key: db.Accounts.generateHash(account_key) 

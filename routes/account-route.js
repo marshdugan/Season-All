@@ -25,7 +25,6 @@ module.exports = function (app) {
                     id: req.session.passport.user,
                     isloggedin: req.isAuthenticated()
                 }
-                //res.render("user_home", user);
                 db.Trail.findAll({}).then(function (data) {
                     res.render("user_home", {trail: data, user: user});
                 });

@@ -21,7 +21,6 @@ if (navigator.geolocation) {
                     stars: parseInt(response.trails[i].stars)
                 });
             }
-            console.log(trailObj);
             $.ajax({
                 type: "POST",
                 url: "/api/trail",
