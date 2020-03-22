@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css"
+        integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/styles/styles.css">
+    <script src="https://kit.fontawesome.com/17845346d6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2|Ubuntu&display=swap" rel="stylesheet">
+    <title>SeasonAll</title>
+
+<body>
+    <div class="container">
+        <header align="center" class="header-wrap">
+            <h3>Welcome, {{user.userInfo.first_name}}</h3>
+            <h5 id="account-number" data-accountemail="{{user.userInfo.email}}">Account email: {{user.userInfo.email}}
+            </h5>
+    </div>
+    <h3 id="update-err-msg"></h3>
+    </header>
+
+    <div class="grid-x grid-padding-x align-center">
+        <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+            {{#each trail}}
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title">{{this.dataValues.name}}</a>
+                <div class="accordion-content" data-tab-content>
+                    <p class="text-center">{{this.dataValues.summary}}</p>
+                    <p>{{this.dataValues.stars}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="main">
+        <div class="card" style="width: 300px;">
+            <div class="card-divider">
+                <h4>I'm featured</h4>
+            </div>
+            <img src="assets/img/generic/rectangle-1.jpg">
+            <div class="card-section">
+                <p>This card makes use of the card-divider element.</p>
+            </div>
+        </div>
+    </div>
+ <footer> Copyright<i class="far fa-copyright"></i> SeasonAll 2020 </footer>
+</body>
+
+</html>

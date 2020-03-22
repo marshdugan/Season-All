@@ -1,5 +1,5 @@
 <div class="container">
-    <header align="center" class="header-wrap">
+    <header class="head">
         <h1>View or update your account</h1>
         <div class="accountID">
             <h3>Welcome, {{userInfo.first_name}}</h3>
@@ -11,63 +11,63 @@
 
     <form id="account-form">
         <div class="grid-container">
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="medium-4 cell">
                     <label for="inputFirst">First Name</label>
                     <input type="text" class="form-control" id="inputFirst" value="{{userInfo.first_name}}"
-                        placeholder="John">
+                        placeholder="John" style="border-radius: 20px" ;>
                 </div>
             </div>
 
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="medium-4 cell">
                     <label for="inputLast">Last Name</label>
                     <input type="text" class="form-control" id="inputLast" value="{{userInfo.last_name}}"
-                        placeholder="Doe">
+                        placeholder="Doe" style="border-radius: 20px">
                 </div>
             </div>
         </div>
 
         <div class="grid-container">
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="medium-4 cell">
                     <label for="inputEmail">Email</label>
                     <input type="text" class="form-control" id="inputEmail" value="{{userInfo.email}}"
-                        placeholder="test@test.com">
+                        placeholder="test@test.com" style="border-radius: 20px">
                 </div>
             </div>
         </div>
 
         <div class="grid-container">
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="medium-4 cell">
                     <label for="inputPhone">Phone</label>
                     <input type="text" class="form-control" id="inputPhone" value="{{userInfo.phone}}"
-                        placeholder="4155551234">
+                        placeholder="4155551234" style="border-radius: 20px">
                 </div>
             </div>
         </div>
 
         <div class="grid-container">
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="medium-4 cell">
                     <label for="inputStreet">Street</label>
                     <input type="text" class="form-control" id="inputStreet" value="{{userInfo.street}}"
-                        placeholder="1234 Your St">
+                        placeholder="1234 Your St" style="border-radius: 20px">
                 </div>
             </div>
 
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="medium-4 cell">
                     <label for="inputCity">City</label>
                     <input type="text" class="form-control" id="inputCity" value="{{userInfo.city}}"
-                        placeholder="Your City">
+                        placeholder="Your City" style="border-radius: 20px">
                 </div>
             </div>
 
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell"> <label for="inputState">State</label>
-                    <select id="inputState" class="form-control" value="{{userInfo.state}}">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="medium-4 cell"> <label for="inputState">State</label>
+                    <select id="inputState" class="form-control" value="{{userInfo.state}}" style="border-radius: 20px">
                         <option value="{{userInfo.state}}">{{userInfo.state}}</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -125,20 +125,22 @@
             </div>
 
 
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="medium-4 cell">
                     <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip" value="{{userInfo.zip}}" placeholder="12345">
+                    <input type="text" class="form-control" id="inputZip" value="{{userInfo.zip}}" placeholder="12345"
+                        style="border-radius: 20px">
                 </div>
             </div>
         </div>
 
-        
+
         <div class="grid-container">
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="medium-4 cell">
                     <label for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" value="{{userInfo.account_key}}">
+                    <input type="password" class="form-control" id="inputPassword" value="{{userInfo.account_key}}"
+                        style="border-radius: 20px">
                 </div>
             </div>
         </div>
@@ -162,7 +164,6 @@
     <div class="row">
         <div class="columns">
             <p><button class="button" data-open="exampleModal1">Click me for a modal</button></p>
-
             <div class="reveal" id="exampleModal1" data-reveal>
                 <h5>Re-Enter Credentials to delete account</h5>
                 <form>
@@ -177,5 +178,4 @@
             </div>
         </div>
     </div>
-
 </div>
