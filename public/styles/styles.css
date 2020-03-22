@@ -1,3 +1,34 @@
+
+.grid-container {
+  color: green;
+  padding-top: 50px;
+  border-radius: 50px;
+
+}
+
+h2 {
+  text-align: center;
+
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Baloo Da 2', cursive;
+  font-weight: bolder;
+  font-size: xx-large;
+
+}
+button {
+  border-radius: 20px !important;
+  background-color: #04542D !important;
+  text-align: center !important;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.buttons{
+  text-align: center;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
@@ -5,3 +36,47 @@
 #account_password { 
   -webkit-text-security: disc; 
 }
+
+body {
+  background-image: url("images/background1.jpg") !important;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+  background-position: center center;
+}
+
+
+h1, h3, h5 {
+  font-family: 'Ubuntu', sans-serif !important;
+  font-weight: bolder;
+
+
+}
+
+#account-form {
+  border-radius: 20px;
+}
+
+.container {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif !important;
+
+}
+
+.main {
+  text-align: center;
+}
+
+footer {
+  color: white;
+  font-family: 'Ubuntu', sans-serif !important;
+position:fixed; 
+bottom:0; 
+z-index:100000;
+width: 100%;
+text-align: center;
+}
+
