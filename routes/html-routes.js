@@ -24,7 +24,7 @@ module.exports = function(app) {
   
   app.get("/trails", function (req, res) {
     db.Trail.findAll({}).then(function (data) {
-      res.render("user_trail", {trail: data});
+      res.render("user_home", {trail: data});
     });
   });
 
