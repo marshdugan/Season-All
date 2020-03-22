@@ -1,18 +1,46 @@
 <div id="home">
   <div class="grid-container">
     <div class="grid-x grid-padding-x align-center">
-        <h2>Sign In</h2>
-        <div class="medium-6 cell">
+      <h2>Sign In</h2>
+      <div class="medium-6 cell">
+        <form>
+          <input type="text" id="email" placeholder="Enter Email" style="border-radius: 5px">
+        </form>
+
+        <form class="">
+          <input type="text" id="account_password" placeholder="Enter Password">
+        </form>
+
+        <button id="sign-in" class="button">Sign In!</button>
+        <button type="submit" id="sign-up" class="button">Sign Up!</button>
+        <button class="button" data-open="exampleModal1">Click me for a modal</button>
+
+        <div class="reveal" id="exampleModal1" data-reveal>
+          <h5>Enter Your Info</h5>
           <form>
-            <input type="text" id="email" placeholder="Enter Email" style="border-radius: 5px">
-          </form>
+            <div class="grid-containe">
+              <div class="grid-x grid-padding-x align-center">
+                <div class="medium-6 cell">
+                  <label for="inputEmail">Email</label>
+                  <input type="text" class="form-control" id="inputEmail" value="{{userInfo.email}}"
+                    placeholder="test@test.com">
+                </div>
+              </div>
+            </div>
 
-          <form class="">
-            <input type="text" id="account_password" placeholder="Enter Password">
-          </form>
+            <div class="grid-container">
+              <div class="grid-x grid-padding-x align-center">
+                <div class="medium-6 cell">
+                  <label for="inputPassword">Password</label>
+                  <input type="password" class="form-control" id="inputPassword" value="{{userInfo.account_key}}">
+                </div>
+              </div>
+            </div>
 
-          <button id="sign-in" class="button">Sign In!</button>
-          <button type="submit" id="sign-up" class="button">Sign Up!</button>
+          </form>
+          <button id="add-new-user" type="button" class="success button">Create</button>
+          <button id="" type="button" class="alert button">Confirm Delete</button>
+        </div>
       </div>
     </div>
   </div>

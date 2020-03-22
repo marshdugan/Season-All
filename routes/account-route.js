@@ -6,7 +6,7 @@ module.exports = function (app) {
 
     app.get("/signup", function (req, res) {
         if (req.isAuthenticated()){
-            res.redirect("/acounts/view");
+            res.redirect("/accounts/view");
         } else {
             res.render("accounts"); 
         }
@@ -51,7 +51,7 @@ module.exports = function (app) {
     
     app.post('/signup', function (req, res, next) {
         passport.authenticate('local-signup', function (err, user, info) {
-            console.log("info", info);
+            //console.log("info", info);
             if (err) {
                 console.log("passport err", err);
                 return next(err); // will generate a 500 error
@@ -62,7 +62,7 @@ module.exports = function (app) {
             }
             req.login(user, loginErr => {
                 if (loginErr) {
-                    console.log("loginerr", loginerr)
+                    //console.log("loginerr", loginerr)
                     return next(loginErr);
                 }
                 console.log('redirecting....');

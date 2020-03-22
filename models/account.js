@@ -11,45 +11,51 @@ module.exports = function(sequelize, DataTypes) {
         },
         first_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: "SeasonAll User",
             validate: {
                 len: [1, 30]
             }
         },
         last_name: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 30]
-            }
+            allowNull: true,
+            defaultValue: "",
+            // validate: {
+            //     len: [1, 30]
+            // }
         },
         street: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 30]
-            }
+            allowNull: true,
+            defaultValue: "",
+            // validate: {
+            //     len: [1, 30]
+            // }
         },
         city: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 30]
-            }
+            allowNull: true,
+            defaultValue: "",
+            // validate: {
+            //     len: [1, 30]
+            // }
         },
         state: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 2]
-            }
+            allowNull: true,
+            defaultValue: "",
+            // validate: {
+            //     len: [1, 2]
+            // }
         },
         zip: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                len: [5]
-            }
+            allowNull: true,
+            defaultValue: 0,
+            // validate: {
+            //     len: [5]
+            // }
         },
         email: {
             type: DataTypes.STRING,
@@ -60,10 +66,11 @@ module.exports = function(sequelize, DataTypes) {
         },
         phone: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [10]
-            }
+            allowNull: true,
+            defaultValue: "",
+            // validate: {
+            //     len: [10]
+            // }
         },
         account_key: {
             type: DataTypes.STRING,
@@ -86,8 +93,6 @@ module.exports = function(sequelize, DataTypes) {
     };
 
     Accounts.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
         Accounts.hasMany(models.Trail, {
           onDelete: "cascade"
         });
