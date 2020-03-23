@@ -6,8 +6,10 @@
 <h3 id="update-err-msg"></h3>
 </header>
 
+<div class ="grid-x grid-passing-x align-center">
+  <button type="submit" id="location" class="button">Click here for trails!</button>
 
-  <button type="submit" id="location" class="button">Click here to get your location</button>
+</div>
 
   <div class="grid-x grid-padding-x align-center">
 
@@ -17,23 +19,12 @@
       <a href="#" class="accordion-title">{{this.dataValues.name}}</a>
       <div class="accordion-content" data-tab-content>
         <p class="text-center">{{this.dataValues.summary}}</p>
-        <p>{{this.dataValues.stars}}</p>
+        <p>Rating: {{this.dataValues.stars}}</p>
       </div>
     </li>
     {{/each}}
   </ul>
 </div>
-<div class="card" style="width: 300px;">
-  <div class="card-divider">
-    <h4>I'm featured</h4>
-  </div>
-  <img src="assets/img/generic/rectangle-1.jpg">
-  <div class="card-section">
-    <p>This card makes use of the card-divider element.</p>
-  </div>
-</div>
-
-
 
 {{!-- <form id="account-form">
     <div class="form-row">
