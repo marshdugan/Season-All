@@ -6,15 +6,16 @@
 <h3 id="update-err-msg"></h3>
 </header>
 
-
-  <button type="submit" id="location" class="button">Click here to get your location</button>
+<div class="location">
+  <button type="submit" id="location" class="button" data-tooltip tabindex="1" title="Choose your location and hiking trails will appear!" data-position="right" data-alignment="bottom">Click here to get your location</button>
+</div>
 
   <div class="grid-x grid-padding-x align-center">
 
-  <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+  <ul class="accordion" style="border-radius: 20px" data-accordion data-multi-expand="true" data-allow-all-closed="true">
     {{#each trail}}
     <li class="accordion-item" data-accordion-item>
-      <a href="#" class="accordion-title">{{this.dataValues.name}}</a>
+      <a href="#" class="accordion-title"><i class="fad fa-map-pin"></i> {{this.dataValues.name}}</a>
       <div class="accordion-content" data-tab-content>
         <p class="text-center">{{this.dataValues.summary}}</p>
         <p>{{this.dataValues.stars}}</p>
@@ -23,15 +24,7 @@
     {{/each}}
   </ul>
 </div>
-<div class="card" style="width: 300px;">
-  <div class="card-divider">
-    <h4>I'm featured</h4>
-  </div>
-  <img src="assets/img/generic/rectangle-1.jpg">
-  <div class="card-section">
-    <p>This card makes use of the card-divider element.</p>
-  </div>
-</div>
+
 
 
 
