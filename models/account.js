@@ -67,7 +67,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         account_key: {
             type: DataTypes.STRING,
-            required: false,
+            required: true,
             validate: {
                 len:[8]
             }

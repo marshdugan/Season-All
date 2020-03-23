@@ -11,7 +11,7 @@ module.exports = {
   "test": {
     "username": "root",
     "password": null,
-    "database": "testdb",
+    "database": "trail_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
