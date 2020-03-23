@@ -1,3 +1,6 @@
+.p {
+  text-align: left;
+}
 
 .grid-container {
   color: green;
@@ -15,7 +18,10 @@ h3 {
   text-align: center;
   font-family: 'Baloo Da 2', cursive;
   font-weight: bolder;
-  font-size: xx-large;
+  font-size: 48px;
+  color: #04542D !important;
+  text-shadow: 2px 2px white;
+
 
 }
 button {
@@ -49,10 +55,18 @@ body {
 }
 
 
-h1, h3, h5 {
+h1 {
+  padding-top: 50px;
   font-family: 'Ubuntu', sans-serif !important;
-  font-weight: bolder;
+  color: #04542D !important;
+  text-shadow: 2px 2px white;
 
+
+}
+h5 {
+  font-family: 'Ubuntu', sans-serif !important;
+  color: #04542D !important;
+  font-size: medium;
 
 }
 
@@ -71,8 +85,8 @@ h1, h3, h5 {
 }
 
 footer {
-  color: white;
-  font-family: 'Ubuntu', sans-serif !important;
+color: white;
+font-family: 'Ubuntu', sans-serif !important;
 position:fixed; 
 bottom:0; 
 z-index:100000;
@@ -80,3 +94,31 @@ width: 100%;
 text-align: center;
 }
 
+.accordion {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.accordion-content {
+  color: #04542D !important;
+  word-wrap: break-word;
+}
+
+.accordion-title {
+  color: #04542D;
+  font-size: medium;
+}
+
+.location {
+  text-align: center;
+}
+
+label {
+  font-size: large !important;
+  font-weight: large !important;
+  text-shadow: 1px 1px white;
+}
+
+.fad.fa-envelope:after {
+  text-align: left;
+  padding-top;
+}
